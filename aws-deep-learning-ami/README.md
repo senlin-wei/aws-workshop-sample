@@ -1,15 +1,11 @@
 # 使用 AWS Deep Learning AMI  做文本分类
 
-### Launch an AWS Deep Learning AMI
-
+### 1.  Launch an AWS Deep Learning AMI
 
 官方教程  [https://aws.amazon.com/cn/getting-started/tutorials/get-started-dlami/?nc1=h_ls](https://aws.amazon.com/cn/getting-started/tutorials/get-started-dlami/?nc1=h_ls)
 
 
-
-### 配置 Jupyter Notebook
-
-
+### 2.  配置 Jupyter Notebook
 
 * Step 1  打开 **~/.jupyter/jupyter_notebook_config.py**, 设置配置文件   
 
@@ -42,20 +38,20 @@ c.NotebookApp.ip='*'
 
 ```
 
-###  配置 conda
+### 3.  配置 conda
 
+
+在命令行界面 安装**jieba** 中文分词模块
 ```shell script
 
 conda info --envs
-
 source activate tensorflow_p36
-
 pip install jieba
 
 ```
    
 
-### 下载代码
+###  4. 下载代码, 运行
 
 ```shell script
 git clone  https://github.com/dikers/aws-workshop-sample.git
@@ -66,5 +62,5 @@ cd aws-workshop-sample/aws-deep-learniing-ami
 
 在jupyter Web界面 将kernel切换到**tensorflow_p36** （已经安装了jieba）
 
-用jupyter 打开 demo.ipynb
+用jupyter 打开 demo.ipynb, 执行代码
 
