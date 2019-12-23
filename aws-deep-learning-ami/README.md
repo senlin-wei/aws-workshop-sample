@@ -6,22 +6,20 @@
 
 
 ### 2.  配置 Jupyter Notebook
+>[jupyter 官方文档](https://jupyter-notebook.readthedocs.io/en/stable/)
 
-* Step 1  打开 **~/.jupyter/jupyter_notebook_config.py**, 设置配置文件   
+Step 1 修改密码
+```shell script
+jupyter notebook password
+```
 
+Step 2  打开 **~/.jupyter/jupyter_notebook_config.py**, 设置配置文件   
 ```shell script
 vim ~/.jupyter/jupyter_notebook_config.py
 ```
 
 
-* Step 2 修改密码
-
-```shell script
-jupyter notebook password
-```
-
-
-* Step 3 配置其它信息
+Step 3 配置其它信息
 ```python
 ## 服务的端口，用默认的8888即可
 c.NotebookApp.port = 8888
@@ -38,8 +36,9 @@ c.NotebookApp.ip='*'
 
 ```
 
-### 3.  配置 conda
+### 3.  配置 conda, 安装python模块
 
+> [conda 官方文档](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html)
 
 在命令行界面 安装**jieba** 中文分词模块
 ```shell script
@@ -51,7 +50,7 @@ pip install jieba
 ```
    
 
-###  4. 下载代码, 运行
+###  4. 下载代码&运行
 
 ```shell script
 git clone  https://github.com/dikers/aws-workshop-sample.git
