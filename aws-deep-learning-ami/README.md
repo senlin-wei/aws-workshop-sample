@@ -55,4 +55,16 @@ pip install jieba
 ```
    
 
+### 下载代码
+
+```shell script
+git clone  https://github.com/dikers/aws-workshop-sample.git
+
+cd aws-workshop-sample/aws-deep-learniing-ami
+
+```
+
+在jupyter Web界面 将kernel切换到**tensorflow_p36** （已经安装了jieba）
+
+用jupyter 打开 demo.ipynb
 
