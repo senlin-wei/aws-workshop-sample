@@ -6,6 +6,9 @@
 
 ![image](./image/00.png)
 
+选择 CentOS-7.5.1804-Nitro， 然后启动这个AMI
+![image](./image/00_1.png)
+
 
 ### Step 1. 打开EC2控制台
 
