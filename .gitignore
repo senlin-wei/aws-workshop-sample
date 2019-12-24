@@ -52,3 +52,5 @@ build.sh
 .idea
 .idea/*
 .idea*
+/idea/*
+/idea
