@@ -176,6 +176,9 @@
 确认无误后，点击“创建AutoScaling组”。
 ![image](./image/22.png)
 
+请确认下图 Auto Scaling Group 已经和目标组进行了关联
+![image](./image/22_2.png)
+
 
 
 测试
@@ -184,7 +187,14 @@
 
 ### Step 23. 访问首页
 
-在EC2控制台左边导航栏，点击负载均衡器，在后边控制面板，点击TestCPUAutoScaling，在描述中DNS名称为该ALB的地址，复制该地址，在浏览器中打开，该地址类似：TestCPUAutoScaling-31879283.cn-northwest-1.elb.amazonaws.com.cn。
+在EC2控制台左边导航栏，点击负载均衡器，在后边控制面板，点击 TestCPUAutoScaling，在描述中DNS名称为该ALB的地址，
+复制该地址，在浏览器中打开，该地址类似 ：TestCPUAutoScaling-31879283.cn-northwest-1.elb.amazonaws.com.cn。
+```shell script
+#复制下面链接到浏览器打开
+http://'your-alb-dns'/ip
+```
+
+
 ![image](./image/23.png)
 
 
