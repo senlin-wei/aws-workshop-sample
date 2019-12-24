@@ -9,6 +9,8 @@
 选择 CentOS-7.5.1804-Nitro， 然后启动这个AMI
 ![image](./image/00_1.png)
 
+创建负载均衡器
+-------------------------------
 
 ### Step 1. 打开EC2控制台
 
@@ -78,7 +80,7 @@
 ![image](./image/09.png)
 
 
-创建AutoScaling组
+创建启动配置组
 -------------------------------
 
 
@@ -134,6 +136,11 @@
 ![image](./image/17.png)
 
 
+
+创建AutoScaling组
+-------------------------------
+
+
 ### Step 18. 准备创建AutoScaling组
 
 在EC2控制台左侧点击“AutoScaling”下的“AutoScaling组”，然后在右边面板上点击“创建AutoScaling组”
@@ -153,7 +160,7 @@
 
 ![image](./image/20_1.png)
 
-点击 **高级详细信息**，展开详细信息配置。选中“从一个或多个负载均衡器接收流量”，然后点击点击“目标组”输入框，选择 **TestCPUGroup** ，根据自身需要选择是否“启用CloudWatch详细监控”。然后点击“下一步：配置扩展策略”。
+点击 **高级详细信息**，展开详细信息配置。选中“从一个或多个负载均衡器接收流量”，然后点击“目标组”输入框，选择 **TestCPUGroup** ，根据自身需要选择是否“启用CloudWatch详细监控”。然后点击“下一步：配置扩展策略”。
 
 ![image](./image/20_2.png)
 
@@ -169,6 +176,10 @@
 确认无误后，点击“创建AutoScaling组”。
 ![image](./image/22.png)
 
+
+
+测试
+-------------------------------
 
 
 ### Step 23. 访问首页
@@ -200,10 +211,13 @@ while true; do wget -q -O - http://'your-alb-url'/cacl; done
 
 ### Step 26.查看负载均衡器负载分发
 
-在浏览器中输入ALB的DNS名称加/ip，例如http://testcpuautoscaling-31879283.cn-northwest-1.elb.amazonaws.com.cn/ip，可以看到每次显示的IP不同（该IP为EC2的内网IP）。
+在浏览器中输入ALB的DNS名称加/ip，例如
+```shell script
+    http://'your-alb-dns'/ip
+```
+ 
 
-
-![image](./image/26.png)
+可以看到每次显示的IP不同（该IP为EC2的内网IP）。
 
 
 
