@@ -1,5 +1,11 @@
 # 基于CPU指标的AutoScaling 
 
+### Step 0. 订阅CentOS
+
+在下面的实验中会用到 centos ， 需要先到AWS Marketplace中订阅一下。 
+
+![image](./image/00.png)
+
 
 ### Step 1. 打开EC2控制台
 
@@ -25,9 +31,11 @@
 ### Step 4. 配置负载均衡器
 
 在名称输入框中输入合适的名称，这里输入*TestCPUAutoScaling*。
-可用区选择，选择3个可用区，选择子网时，需要选择公网。然后点击“下一步：配置安全设置”
+配置端口80， （如果没有申请ICP Exception，可以先设置其他端口。）
+![image](./image/04_1.png)
 
-![image](./image/04.png)
+可用区选择，选择3个可用区，选择子网时，需要选择公网。然后点击“下一步：配置安全设置”
+![image](./image/04_2.png)
 
 
 
@@ -142,7 +150,7 @@
 
 ![image](./image/20_1.png)
 
-点击“高级详细信息”，展开详细信息配置。选中“从一个或多个负载均衡器接收流量”，然后点击点击“目标组”输入框，选择“TestCPUGroup”，根据自身需要选择是否“启用CloudWatch详细监控”。然后点击“下一步：配置扩展策略”。
+点击 **高级详细信息**，展开详细信息配置。选中“从一个或多个负载均衡器接收流量”，然后点击点击“目标组”输入框，选择 **TestCPUGroup** ，根据自身需要选择是否“启用CloudWatch详细监控”。然后点击“下一步：配置扩展策略”。
 
 ![image](./image/20_2.png)
 
@@ -171,7 +179,7 @@
 
 在Linux服务器上执行以下代码：
 ```shell script
-while true; do wget -q -O - http://testcpuautoscaling-31879283.cn-northwest-1.elb.amazonaws.com.cn/cacl; done
+while true; do wget -q -O - http://'your-alb-url'/cacl; done
 ```
 
 把地址替换为ALB的DNS名称。正常输出OK
