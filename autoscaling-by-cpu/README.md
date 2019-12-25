@@ -1,10 +1,15 @@
 # 基于CPU指标的AutoScaling 
 
+创建负载均衡ALB 和Auto Scaling组， 实现根据当前实例的CPU 负载情况，进行实例的自动伸缩。
+
+![image](./image/architecture.png)
+
+
 ### Step 0. 订阅CentOS
 
 在下面的实验中会用到 centos ， 需要先到AWS Marketplace中订阅一下。 
 
-![image](./image/00.png)
+
 
 选择 CentOS-7.5.1804-Nitro， 然后启动这个AMI
 ![image](./image/00_1.png)
